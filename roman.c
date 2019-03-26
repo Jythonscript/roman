@@ -62,4 +62,5 @@ int indexOf(int num) {
 			return i;
 		}
 	}
+	return -1;
 }
