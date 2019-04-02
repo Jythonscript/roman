@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "roman.h"
 
 //data for information about roman numerals
 #define NUMLETTERS 7

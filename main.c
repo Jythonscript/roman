@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include "roman.c"
-
-int romanToInt(const char *roman);
+#include "roman.h"
 
 /*
    Roman Numeral Conversion
