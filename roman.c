@@ -23,7 +23,7 @@ int romanNumbers[7] = {1,5,10,50,100,500,1000};
     printf("%d\n", romanToInt("MDCCLXXVI")); = 1776
     printf("%d\n", romanToInt("")); = 
 */
-int romanToInt(char *input) {
+int romanToInt(const char *input) {
 
 	int result = 0; //final number to return
 	int indexOf(int num);
