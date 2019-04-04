@@ -54,7 +54,31 @@ int romanToInt(const char *input) {
 	return result;
 }
 
+/* Convert num to roman numerals, and store the result in out pointer
+
+	Until num is zero
+		find largest romanNumbers that you can subtract and keep num >= 0
+		append char to a buffer
+	check for more than 3 of the same character in a row, other than largest roman numeral
+		find correct sequence by finding 2 character subtraction that is equivalent to the sequence
+		append correct sequence to out pointer
+
+	Test cases:
+	intToRoman(ptr, 3); = "III"
+	intToRoman(ptr, 14); = "XIV"
+	intToRoman(ptr, 100); = "C"
+	intToRoman(ptr, 95); = "VC"
+	intToRoman(ptr, 1776); = "MDCCLXXVI"
+	intToRoman(ptr, 4900); = "MMMMCM"
+   	
+ */
+void intToRoman(char *out, int num) {
+
+
+}
+
 //return index of the argument int in the romanLetters array
+//return -1 if not found
 int indexOf(int num) {
 
 	int i;
