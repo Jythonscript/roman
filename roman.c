@@ -2,7 +2,7 @@
 #include "roman.h"
 
 //data for information about roman numerals
-#define NUMLETTERS 7
+#define NUMROMAN 7
 char *romanLetters = "IVXLCDM";
 int romanNumbers[7] = {1,5,10,50,100,500,1000};
 
@@ -58,10 +58,11 @@ int romanToInt(const char *input) {
 
 	Until num is zero
 		find largest romanNumbers that you can subtract and keep num >= 0
+		subtract value
 		append char to a buffer
-	check for more than 3 of the same character in a row, other than largest roman numeral
+	check for 4 of the same character in a row, other than largest roman numeral
 		find correct sequence by finding 2 character subtraction that is equivalent to the sequence
-		append correct sequence to out pointer
+		either way, append sequence to out pointer
 
 	Test cases:
 	intToRoman(ptr, 3); = "III"
@@ -74,7 +75,25 @@ int romanToInt(const char *input) {
  */
 void intToRoman(char *out, int num) {
 
+	char buf[100]; //TODO make buffer safe with argument
+	int bufIndex = 0; //index of next available space in buffer
+	while (num > 0) { // runs until entire string is found
 
+		int i;
+		for (i = NUMROMAN - 1; i >= 0; i--) {
+
+			if (num - romanNumbers[i] >= 0) {
+				//found next letter
+				buf[bufIndex] = romanLetters[i];
+				bufIndex++;
+				num -= romanNumbers[i];
+				break; //exit for loop
+			}
+		} // end for
+	} // end while
+	buf[bufIndex] = '\0';
+	puts(buf);
+	//TODO copy buf to out
 }
 
 //return index of the argument int in the romanLetters array
@@ -82,7 +101,7 @@ void intToRoman(char *out, int num) {
 int indexOf(int num) {
 
 	int i;
-	for (i = 0; i < NUMLETTERS; i++) {
+	for (i = 0; i < NUMROMAN; i++) {
 		if (romanLetters[i] == num) {
 			return i;
 		}

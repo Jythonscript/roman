@@ -6,5 +6,7 @@
 int romanToInt(const char *input);
 //return index of the argument int in the romanLetters array
 int indexOf(int num);
+//convert arg2 int to roman numerals, and store it in out pointer
+void intToRoman(char *out, int num);
 
 #endif //ROMAN_H include guard

@@ -10,6 +10,10 @@
 
 int main() {
 
+	char roman[10];
+	intToRoman(roman, 6);
+
+	/*
     printf("IX: %d\n", romanToInt("IX"));
 
     printf("XIV: %d\n", romanToInt("XIV"));
@@ -17,6 +21,7 @@ int main() {
     printf("CCC: %d\n", romanToInt("CCC"));
 
     printf("MDCCLXXVI: %d\n", romanToInt( "MDCCLXXVI"));
+	*/
 	return 0;
 }
 
