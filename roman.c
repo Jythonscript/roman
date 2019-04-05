@@ -77,7 +77,7 @@ void intToRoman(char *out, int num) {
 
 	char buf[100]; //TODO make buffer safe with argument
 	int bufIndex = 0; //index of next available space in buffer
-	while (num > 0) { // runs until entire string is found
+	while (num > 0) { //runs until entire string is found
 
 		int i;
 		for (i = NUMROMAN - 1; i >= 0; i--) {
@@ -89,11 +89,14 @@ void intToRoman(char *out, int num) {
 				num -= romanNumbers[i];
 				break; //exit for loop
 			}
-		} // end for
-	} // end while
+		} //end for
+	} //end while
 	buf[bufIndex] = '\0';
 	puts(buf);
+	//TODO handle subtractions by re-parsing
+
 	//TODO copy buf to out
+	
 }
 
 //return index of the argument int in the romanLetters array
